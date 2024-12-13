@@ -27,26 +27,32 @@ class TaskController extends Controller
 
     public function store(StoreTaskRequest $request): RedirectResponse
     {
-        //
-    }
+        Task::create($request->validated());
 
-    public function show(Task $task): View
-    {
-        //
+        return redirect()->route('tasks.index')
+            ->with('message', __('Task created successfully'));
     }
 
     public function edit(Task $task): View
     {
-        //
+        $users = User::select(['id', 'name'])->pluck('name', 'id');
+
+        return view('tasks.edit', compact('task', 'users'));
     }
 
     public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
     {
-        //
+        $task->update($request->validated());
+
+        return redirect()->route('tasks.index')
+            ->with('message', __('Task updated successfully'));
     }
 
     public function destroy(Task $task): RedirectResponse
     {
-        //
+        $task->delete();
+
+        return redirect()->route('tasks.index')
+            ->with('message', __('Task deleted successfully'));
     }
 }
