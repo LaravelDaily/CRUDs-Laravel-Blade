@@ -57,6 +57,8 @@ This project goes beyond the default Laravel Breeze setup with the following enh
 6. Transform the links to look like buttons visually, with the same Tailwind styles as Laravel Breeze components. Adds a custom Blade component `x-link-button` for this.
 7. Includes Pest test file `TasksCRUDTest` that has methods to test all Controller routes and also validation of each field.
 
+![](https://laraveldaily.com/uploads/2024/12/crud-breeze-tasks-tests.png)
+
 ---
 
 ## Found a bug? Got a question/idea? 
