@@ -10,14 +10,19 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="overflow-hidden overflow-x-auto p-6 bg-white border-b border-gray-200">
                     <div class="min-w-full align-middle">
-                        <table class="min-w-full divide-y divide-gray-200 border">
+                        <a href="{{ route('tasks.create') }}" class="underline">{{ __('Add New Task') }}</a>
+
+                        <table class="min-w-full divide-y divide-gray-200 border mt-4">
                             <thead>
                             <tr>
                                 <th class="px-6 py-3 bg-gray-50 text-left">
-                                    <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</span>
+                                    <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">{{ __('Name') }}</span>
                                 </th>
                                 <th class="px-6 py-3 bg-gray-50 text-left">
-                                    <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Description</span>
+                                    <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">{{ __('Description') }}</span>
+                                </th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">
+                                    <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">{{ __('Assigned to') }}</span>
                                 </th>
                             </tr>
                             </thead>
@@ -29,7 +34,10 @@
                                         {{ $task->name }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-                                        {{ $task->description }}
+                                        {{ str($task->description)->excerpt() }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
+                                        {{ $task->user?->name }}
                                     </td>
                                 </tr>
                             @endforeach
