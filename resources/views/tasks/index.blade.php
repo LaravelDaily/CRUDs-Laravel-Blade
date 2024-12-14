@@ -39,7 +39,7 @@
                                         {{ $task->name }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-                                        {{ str($task->description)->excerpt('', ['radius' => 50]) }}
+                                        {{ str($task->description)->limit(50) }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
                                         {{ $task->user?->name }}
