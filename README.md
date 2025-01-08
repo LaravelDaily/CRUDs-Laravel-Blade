@@ -1,6 +1,6 @@
 # Laravel CRUD: Breeze Blade Version
 
-This project is a simple Laravel CRUD for Tasks model built on top of Laravel Breeze starter kit Blade version.
+This project is a simple Laravel CRUD for Tasks model built on the Laravel Breeze starter kit Blade version.
 
 ![](https://laraveldaily.com/uploads/2024/12/crud-breeze-tasks.png)
 
@@ -47,7 +47,7 @@ Follow these steps to set up the project locally:
 
 ## How it Works?
 
-This project takes Laravel Breeze as a base system and adds the Task CRUD on top of it. Here are the main changes:
+This project takes Laravel Breeze as a base system and adds the Task CRUD. Here are the main changes:
 
 For this, we will start with simple Database table and Model:
 
@@ -330,7 +330,7 @@ And of course, Create form:
 </x-app-layout>
 ```
 
-For this, we modified Laravel Breeze Blade component `x-input-label` to add a "required" asterisk parameter.
+We modified the Laravel Breeze Blade component `x-input-label` to add a "required" asterisk parameter.
 
 ![](https://laraveldaily.com/uploads/2025/01/form-modification-for-required-star.png)
 
